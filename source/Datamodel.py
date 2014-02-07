@@ -6,7 +6,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 
-engine = create_engine('sqlite:////:memory:', echo=True)
+engine = create_engine('sqlite:///:memory:', echo=True)
 Base = declarative_base()
 
 
