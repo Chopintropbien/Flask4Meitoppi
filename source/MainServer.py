@@ -1,6 +1,7 @@
 __author__ = 'andrei'
 
-from flask import Flask
+from flask import Flask, jsonify
+from SQLengine import andrei_dict
 app = Flask(__name__)
 
 
@@ -11,7 +12,10 @@ def hello():
 
 @app.route("/user/<username>")
 def show_user_profile(username):
-    return 'User %s' % username
+    if username == 'chiffa' or username == 'andrei':
+        return jsonify(andrei_dict)
+    else:
+        return jsonify({'Error':'No Such User!'})
 
 
 if __name__ == "__main__":

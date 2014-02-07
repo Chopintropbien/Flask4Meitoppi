@@ -1,7 +1,7 @@
 __author__ = 'andrei'
 
 from sqlalchemy.orm import sessionmaker
-from Datamodel import engine,User
+from Datamodel import engine, User
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -17,4 +17,11 @@ def generate_example_usr(usr_dict):
                     )
     session.add(ex_usr)
 
+
+andrei_dict={'prenom':'Andrei',
+             'nom':'Kucharavy',
+             'alias':'chiffa',
+             'n_amis':'10',
+             'n_avis':'4',
+             'n_suiveurs':'3'}
 
